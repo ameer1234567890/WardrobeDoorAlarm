@@ -16,6 +16,8 @@
 
 /* Do not change these unless you know what you are doing */
 int waitBeforeAlarm = WAIT_BEFORE_ALARM * 1000;
+unsigned long previousMillis = 0;
+const long noteDuration = 200;
 
 
 void setup() {
@@ -32,7 +34,9 @@ void setup() {
 
 
 void loop() {
-  if (millis() > waitBeforeAlarm) {
+  unsigned long currentMillis = millis();
+  if (millis() > waitBeforeAlarm && currentMillis - previousMillis >= noteDuration) {
+    previousMillis = currentMillis;
     delay(waitBeforeAlarm);
     tone(BUZZ_PIN, 2000, 100);
     noTone(100);
