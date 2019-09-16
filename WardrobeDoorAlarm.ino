@@ -10,8 +10,8 @@
 
 /* Configurable variables */
 #define BUZZ_PIN 0
-#define LED_PIN 1
-#define OTA_HOSTNAME "Doorbell-Transmitter"
+#define LED_PIN 2
+#define OTA_HOSTNAME "WardrobeDoorAlarm"
 #define WAIT_BEFORE_ALARM 3 // in seconds
 
 /* Do not change these unless you know what you are doing */
@@ -37,7 +37,6 @@ void loop() {
   unsigned long currentMillis = millis();
   if (millis() > waitBeforeAlarm && currentMillis - previousMillis >= noteDuration) {
     previousMillis = currentMillis;
-    delay(waitBeforeAlarm);
     tone(BUZZ_PIN, 2000, 100);
     noTone(100);
   }
