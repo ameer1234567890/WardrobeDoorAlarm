@@ -12,7 +12,7 @@
 #define BUZZ_PIN 0
 #define LED_PIN 2
 #define OTA_HOSTNAME "WardrobeDoorAlarm"
-#define WAIT_BEFORE_ALARM 30 // in seconds
+#define WAIT_BEFORE_ALARM 60 // in seconds
 
 /* Do not change these unless you know what you are doing */
 int waitBeforeAlarm = WAIT_BEFORE_ALARM * 1000;
